@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Load the saved model
-model = joblib.load(open('linear_regression_model.pkl', 'rb'))
+model = joblib.load(open('knn_model.pkl', 'rb'))
 
 st.title('Sales Prediction App')
 
@@ -17,4 +17,5 @@ if st.button('Predict Sales'):
     input_data = np.array([[TV, Radio, Newspaper]])
     prediction = model.predict(input_data)[0]
     st.success(f'Predicted Sales: {prediction:.2f}')
+
 
